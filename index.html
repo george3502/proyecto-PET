@@ -1,263 +1,524 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Uso y Reciclaje del PET en Veracruz</title>
+<!-- <!DOCTYPE html>: Le indica al navegador que estamos utilizando el estándar moderno HTML5. -->
 
+<html lang="es">
+<!-- <html>: La etiqueta principal que engloba todo el sitio web. El atributo lang="es" indica que el contenido está en español. -->
+
+<head>
+    <!-- <head>: Sección técnica que contiene metadatos, fuentes de texto y estilos. No se ve directamente en pantalla. -->
+    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">: Asegura que caracteres especiales como acentos y la "ñ" se muestren correctamente en cualquier pantalla. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport">: Hace que el sitio web se adapte automáticamente al tamaño de celulares, tablets y computadoras (diseño responsivo). -->
+    
+    <title>Eco-Veracruz: El Desafío del PET</title>
+    <!-- <title>: Define el título oficial que se muestra en la pestaña superior del navegador. -->
+
+    <!-- FUENTES DE GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- <link>: Importa la tipografía "Poppins" desde Google Fonts para darle un estilo de diseño moderno y limpio a todo el texto. -->
+
+    <!-- ICONOS DE FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- <link>: Importa una biblioteca de iconos profesionales (hojas, reciclaje, alerta, etc.) para acompañar los títulos. -->
+
+    <!-- HOJA DE ESTILOS INTEGRADA (CSS) -->
     <style>
-        /* Modifica la fuente de toda la página y elimina márgenes molestos */
+        /* <style>: Permite añadir reglas estéticas y de diseño al código HTML para controlar colores, tamaños, márgenes e interactividad. */
+
+        /* Variables de color para mantener armonía visual */
+        :root {
+            --color-primario: #0f5132;    /* Verde oscuro ecológico */
+            --color-secundario: #198754;  /* Verde brillante para botones y acentos */
+            --color-fondo: #f4f9f6;       /* Fondo suave grisáceo/verdoso */
+            --color-texto: #2b302c;       /* Gris oscuro para lectura cómoda */
+            --color-blanco: #ffffff;      /* Blanco puro para tarjetas y fondo del menú */
+        }
+
+        /* Configuración base del sitio */
+        html {
+            scroll-behavior: smooth; /* Hace que al presionar botones el navegador se desplace de forma suave y elegante hacia la sección. */
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8f7; /* Gris menta muy claro */
-            color: #2d3748; /* Gris oscuro para el texto principal */
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
             line-height: 1.6;
         }
 
-        /* Diseño de la Barra de Navegación */
-        nav {
-            background-color: #00796b; /* Verde ecológico oscuro */
-            padding: 15px 0;
-            position: sticky;
+        /* -----------------------------------------
+           1. PANTALLA DE INICIO (INTERACTIVA)
+        ----------------------------------------- */
+        .pantalla-inicio {
+            height: 100vh; /* Ocupa exactamente el 100% de la altura visible del navegador. */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(25, 135, 84, 0.9)), 
+                        url('http://googleusercontent.com/image_collection/image_retrieval/18326647647696968361_0') no-repeat center center/cover;
+            /* Combina un degradado verde translúcido sobre una imagen de fondo real de una playa afectada por plásticos. */
+            color: var(--color-blanco);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .pantalla-inicio h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4); /* Le da sombra al texto para que resalte del fondo. */
+        }
+
+        .pantalla-inicio p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 0 40px 0;
+            font-weight: 300;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Botón Interactivo de Entrada */
+        .btn-ingresar {
+            background-color: var(--color-secundario);
+            color: var(--color-blanco);
+            padding: 16px 36px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none; /* Elimina la línea azul de subrayado típica de los enlaces. */
+            border-radius: 50px; /* Redondea las esquinas del botón dándole un aspecto moderno. */
+            transition: all 0.3s ease; /* Permite una animación suave en el cambio de colores al pasar el cursor. */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+        }
+
+        .btn-ingresar:hover {
+            background-color: var(--color-blanco);
+            color: var(--color-primario);
+            transform: translateY(-5px); /* Eleva ligeramente el botón al pasar el mouse para simular interactividad. */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--color-primario);
+        }
+
+        /* -----------------------------------------
+           2. BARRA DE NAVEGACIÓN STICKY
+        ----------------------------------------- */
+        header {
+            position: sticky; /* Se queda pegada en la parte superior cuando el usuario navega hacia abajo. */
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000; /* Asegura que la barra siempre quede por encima del contenido restante. */
+            background-color: var(--color-blanco);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
-        nav p {
-            margin: 0;
-            text-align: center;
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
         }
 
-        /* Estilo de los enlaces en el menú */
-        nav a {
-            color: #e0f2f1; /* Azul aguamarina muy claro */
+        .logo {
+            font-weight: 700;
+            color: var(--color-primario);
+            font-size: 1.3rem;
             text-decoration: none;
-            font-weight: bold;
-            margin: 0 15px;
-            transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Efecto cuando pasas el cursor sobre un enlace */
-        nav a:hover {
-            color: #ffffff;
-            text-decoration: underline;
+        .menu {
+            display: flex;
+            gap: 20px;
         }
 
-        /* Contenedores de las secciones */
+        .menu a {
+            text-decoration: none;
+            color: var(--color-texto);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .menu a:hover {
+            color: var(--color-secundario);
+            background-color: #f0f7f3;
+        }
+
+        /* -----------------------------------------
+           3. ESTRUCTURA Y CONTENIDO GENERAL
+        ----------------------------------------- */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
         section {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 25px;
-            background-color: #ffffff; /* Fondos de tarjetas en blanco */
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
-        }
-
-        /* Títulos principales */
-        h1 {
-            color: #004d40;
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            background-color: var(--color-blanco);
+            border-radius: 16px; /* Bordes redondeados en las tarjetas de sección */
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03); /* Sombra muy sutil para dar volumen. */
         }
 
         h2 {
-            color: #00796b;
-            border-bottom: 2px solid #b2dfdb; /* Línea decorativa abajo del título */
-            padding-bottom: 8px;
+            color: var(--color-primario);
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 3px solid #e1efe6;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        h3 {
-            color: #004d40;
+        /* Diseño de columnas para combinar texto e imágenes */
+        .fila-contenido {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Divide la sección en dos columnas de igual tamaño. */
+            gap: 40px;
+            align-items: center;
         }
 
-        /* Estilo de imágenes */
-        .img-contenedor {
-            text-align: center;
-            margin: 20px 0;
+        @media (max-width: 768px) {
+            /* En pantallas de celulares, convierte las 2 columnas a una sola fila vertical. */
+            .fila-contenido {
+                grid-template-columns: 1fr;
+            }
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
+        .imagen-recuadro {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            height: 320px;
+        }
+
+        .imagen-recuadro img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recorta la imagen automáticamente para que encaje de forma estética sin deformarse. */
+        }
+
+        /* -----------------------------------------
+           4. DISEÑO DE TARJETAS (CARDS)
+        ----------------------------------------- */
+        .contenedor-tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Crea columnas flexibles que se adaptan automáticamente. */
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .tarjeta {
+            background-color: #fdfdfd;
+            border-left: 5px solid var(--color-secundario); /* Borde decorativo verde en el lado izquierdo. */
+            padding: 24px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
         }
 
-        /* Formatos de texto */
-        strong { color: #00796b; }
-        em { color: #4a5568; }
+        .tarjeta:hover {
+            transform: translateY(-5px); /* Efecto interactivo al pasar el mouse por encima. */
+        }
 
-        /* Estilos de las Listas */
+        .tarjeta h3 {
+            margin-top: 0;
+            color: var(--color-primario);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* -----------------------------------------
+           5. TABLAS DE DATOS ESTILIZADAS
+        ----------------------------------------- */
+        .tabla-contenedor {
+            overflow-x: auto; /* Permite deslizar la tabla si la pantalla del celular es muy pequeña. */
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Elimina los espacios dobles entre bordes de celdas. */
+            text-align: left;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eef3f0;
+        }
+
+        th {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fbf9; /* Aplica colores alternados en las filas para facilitar la lectura. */
+        }
+
+        /* -----------------------------------------
+           6. LISTAS Y FOOTER
+        ----------------------------------------- */
         ul, ol {
             padding-left: 20px;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        /* Diseño moderno de la Tabla */
-        table {
-            width: 100%;
-            border-collapse: collapse; /* Elimina doble borde */
-            margin: 20px 0;
-            background-color: #ffffff;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        th {
-            background-color: #00796b;
-            color: #ffffff;
-        }
-
-        /* Hace que las filas impares tengan un color diferente (Efecto Cebra) */
-        tr:nth-child(even) {
-            background-color: #e0f2f1;
-        }
-
-        /* Botón interactivo con JavaScript */
-        .btn-interactivo {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            padding: 12px;
-            background-color: #00897b;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background 0.3s;
-        }
-
-        .btn-interactivo:hover {
-            background-color: #004d40;
-        }
-
-        /* Pie de página */
         footer {
-            background-color: #004d40;
-            color: #e0f2f1;
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: 40px 20px;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+            margin-top: 60px;
         }
 
         footer a {
-            color: #80cbc4;
+            color: #a3cfbb;
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
         footer a:hover {
+            color: var(--color-blanco);
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
+<!-- <body>: El cuerpo del sitio web. Todo lo que esté aquí dentro es visible para el visitante. -->
 
-    <nav>
-        <p>
-            <a href="#introduccion">Inicio</a>
-            <a href="#impacto">Impacto Ambiental</a>
-            <a href="#economia">Economía Circular</a>
-            <a href="#iniciativas">Iniciativas en Veracruz</a>
-        </p>
-    </nav>
+    <!-- =========================================
+         1. PANTALLA DE INICIO (SPLASH SCREEN)
+         ========================================= -->
+    <div class="pantalla-inicio" id="inicio">
+    <!-- <div class="pantalla-inicio">: Bloque contenedor que crea la pantalla completa de introducción con el botón interactivo. -->
+        <h1>El Desafío del PET en Veracruz</h1>
+        <p>Descubre el impacto ambiental del plástico en nuestro estado, las soluciones tecnológicas y las iniciativas escolares que están transformando la ecología veracruzana.</p>
+        <a href="#portal" class="btn-ingresar">Entrar al Portal <i class="fa-solid fa-circle-arrow-down"></i></a>
+        <!-- <a class="btn-ingresar">: Enlace con formato de botón que redirige al id "portal" con una animación de scroll suave. -->
+    </div>
 
-    <section id="introduccion">
-        <h1>El Uso y Reciclaje del PET en el Estado de Veracruz</h1>
 
-        <div class="img-contenedor">
-            <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800" alt="Botellas de PET para reciclar">
-        </div>
+    <!-- =========================================
+         2. MENÚ DE NAVEGACIÓN ADHERENTE (STICKY)
+         ========================================= -->
+    <header id="portal">
+    <!-- <header>: Encabezado del sitio web. Contendrá la navegación principal. -->
+        <nav>
+        <!-- <nav>: Define una zona de navegación. Permite al usuario desplazarse por el sitio de forma organizada. -->
+            <a href="#inicio" class="logo">
+                <i class="fa-solid fa-leaf"></i> Eco-Veracruz
+            </a>
+            <div class="menu">
+            <!-- <div>: Contenedor genérico para agrupar los botones de navegación. -->
+                <a href="#impacto">Impacto</a>
+                <a href="#economia">Economía Circular</a>
+                <a href="#proceso">El Proceso</a>
+                <a href="#veracruz">Innovación Local</a>
+                <a href="#escuelas">Iniciativas</a>
+            </div>
+        </nav>
+    </header>
 
-        <p>
-            El plástico <strong>PET (Polietileno Tereftalato)</strong> es uno de los materiales más utilizados en la industria de las bebidas en <em>Veracruz</em> debido a su ligereza y <u>versatilidad industrial</u>. Sin embargo, su consumo masivo plantea serios retos para la gestión de residuos en el estado.
-        </p>
 
-        <button class="btn-interactivo" onclick="mostrarMensaje()">¿Sabías qué?</button>
-    </section>
+    <!-- =========================================
+         3. CONTENIDO PRINCIPAL DEL PORTAL
+         ========================================= -->
+    <main>
+    <!-- <main>: Alberga el contenido exclusivo y más relevante del sitio web. -->
 
-    <section id="impacto">
-        <h2>1. Impacto Ambiental y Problemática</h2>
-        <p>El uso desmedido del PET genera consecuencias críticas en nuestro entorno local:</p>
+        <!-- SECCIÓN 1: IMPACTO AMBIENTAL -->
+        <section id="impacto">
+        <!-- <section id="impacto">: Agrupa la información referente al problema de contaminación por PET. -->
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Impacto Ambiental y Persistencia</h2>
+            <div class="fila-contenido">
+            <!-- <div class="fila-contenido">: Distribuye el texto a la izquierda y la imagen a la derecha. -->
+                <div>
+                    <p>
+                        El estado de Veracruz sufre fuertemente por la acumulación de residuos plásticos. De acuerdo con informes ambientales de Greenpeace y el Tecnológico de Veracruz, las cuencas bajas de los ríos Jamapa-Cotaxtla e importantes playas de la zona conurbada <strong>Boca del Río-Alvarado</strong> presentan graves niveles de contaminación por microplásticos.
+                    </p>
+                    <p>
+                        La persistencia de este material es alarmante: una sola botella de <strong>PET (Tereftalato de polietileno)</strong> puede tardar entre <strong>150 y 500 años en desintegrarse</strong> por completo bajo la acción física y solar, fragmentándose en partículas diminutas que son ingeridas accidentalmente por la fauna marina del Golfo de México, llegando eventualmente a los alimentos de la población local.
+                    </p>
+                </div>
+                <div class="imagen-recuadro">
+                <!-- <div class="imagen-recuadro">: Contenedor de la imagen que le aplica bordes redondeados y sombra. -->
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/18326647647696968361_0" alt="Playa contaminada con plástico en costas veracruzanas">
+                    <!-- <img>: Carga una imagen de contaminación por plástico proveniente del banco de recursos de Google. -->
+                </div>
+            </div>
+        </section>
 
-        <ul>
-            <li><strong>Persistencia en el ambiente:</strong> Una botella de PET puede tardar hasta 500 años en degradarse por completo.</li>
-            <li><strong>Contaminación oceánica:</strong> Gran parte de estos desechos terminan en el Golfo de México, afectando gravemente la fauna marina de Veracruz.</li>
-            <li><strong>Alternativa a otros materiales:</strong> Aunque es más ligero que el vidrio, su falta de recolección anula cualquier beneficio ambiental inicial.</li>
-        </ul>
-    </section>
 
-    <section id="economia">
-        <h2>2. Reciclaje y Economía Circular</h2>
-        <p>La transición hacia una economía circular en Veracruz busca que el PET no se convierta en basura, sino en materia prima para nuevos productos a través de la <strong>innovación veracruzana</strong>.</p>
-        
-        <h3>Datos sobre la gestión del PET</h3>
+        <!-- SECCIÓN 2: EL PROCESO DE RECICLAJE (TARJETAS) -->
+        <section id="proceso">
+            <h2><i class="fa-solid fa-arrows-spin"></i> El Proceso de Reciclaje del PET</h2>
+            <p>La transformación del PET de residuo a recurso útil involucra una serie de pasos controlados e industriales:</p>
+            
+            <div class="contenedor-tarjetas">
+            <!-- <div class="contenedor-tarjetas">: Agrupa las tarjetas informativas utilizando una cuadrícula moderna (grid). -->
+                <div class="tarjeta">
+                    <h3><span style="color: var(--color-secundario);">01.</span> Acopio y Separación</h3>
+                    <p>Se recolectan los envases post-consumo y se separan meticulosamente de otros plásticos (como las tapas de polietileno) para asegurar la pureza del material.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3><span style="color: var(--color-secundario);">02.</span> Molienda y Lavado</h3>
+                    <p>Las botellas se trituran para formar pequeñas hojuelas (flakes) que posteriormente se lavan con agua y detergentes especiales para eliminar etiquetas o pegamento.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3><span style="color: var(--color-secundario);">03.</span> Extrusión y Peletizado</h3>
+                    <p>Las hojuelas limpias se funden a altas temperaturas y se moldean en pequeños filamentos llamados pellets, listos para volver a fabricar envases de grado alimentario.</p>
+                </div>
+            </div>
+        </section>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Concepto</th>
-                    <th>Situación Actual en Veracruz</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Proceso de Reciclaje</strong></td>
-                    <td>Recolección, trituración, lavado y fundición para crear nueva resina plástica.</td>
-                </tr>
-                <tr>
-                    <td><strong>Destino Comercial</strong></td>
-                    <td>Uso en la industria textil local y fabricación de nuevas botellas de grado alimenticio.</td>
-                </tr>
-                <tr>
-                    <td><strong>Centros de Acopio</strong></td>
-                    <td>Concentrados principalmente en las zonas metropolitanas de Xalapa y Veracruz-Boca del Río.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
 
-    <section id="iniciativas">
-        <h2>3. Iniciativas Sociales y Educativas en el Estado</h2>
-        <p>Actualmente, bachilleratos y universidades en Veracruz están implementando programas para concientizar a los jóvenes. Las principales acciones son:</p>
+        <!-- SECCIÓN 3: ECONOMÍA CIRCULAR Y COMPARATIVA (TABLA) -->
+        <section id="economia">
+            <h2><i class="fa-solid fa-chart-simple"></i> Economía Circular y Alternativas de Materiales</h2>
+            <p>La economía circular busca rediseñar productos y procesos para eliminar los residuos. A continuación, se compara la versatilidad, persistencia y reciclaje de los principales materiales usados en el envasado industrial de Veracruz:</p>
+            
+            <div class="tabla-contenedor">
+            <!-- <div class="tabla-contenedor">: Envoltura responsiva para la tabla de datos. -->
+                <table>
+                <!-- <table>: Define la tabla estructurada en columnas y filas. -->
+                    <thead>
+                    <!-- <thead>: Agrupa la fila superior que describe los títulos de las columnas (encabezado). -->
+                        <tr>
+                        <!-- <tr>: Fila de la tabla. -->
+                            <th>Material</th>
+                            <!-- <th>: Celda especial para encabezado (texto en negrita y color verde oscuro). -->
+                            <th>Tiempo de Degradación</th>
+                            <th>Capacidad de Reciclaje</th>
+                            <th>Ventaja en Veracruz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!-- <tbody>: Agrupa el contenido o cuerpo de los datos dentro de la tabla. -->
+                        <tr>
+                            <td><strong>PET (Plástico)</strong></td>
+                            <!-- <td>: Celda estándar que contiene la información de cada fila. -->
+                            <td>150 a 500 años</td>
+                            <td>Alto (100% Reciclable)</td>
+                            <td>Ligero, irrompible y requiere menos combustible de transporte en carreteras estatales.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vidrio</strong></td>
+                            <td>Más de 4,000 años</td>
+                            <td>Infinito (Sin pérdida de calidad)</td>
+                            <td>No altera sabores y es altamente reutilizable, aunque es pesado y frágil.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aluminio</strong></td>
+                            <td>10 a 100 años</td>
+                            <td>Excelente (Proceso muy eficiente)</td>
+                            <td>Mercado de acopio muy consolidado y alto valor por kilogramo en chatarreras locales.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <ol>
-            <li>Campañas de "Limpiatón" en las playas del puerto de Veracruz.</li>
-            <li>Instalación de contenedores exclusivos para PET en los centros educativos de nivel medio superior.</li>
-            <li>Talleres de creatividad para transformar el plástico en artículos de utilidad escolar.</li>
-        </ol>
-    </section>
 
+        <!-- SECCIÓN 4: INNOVACIÓN EN VERACRUZ (COLUMNAS) -->
+        <section id="veracruz">
+            <h2><i class="fa-solid fa-circle-info"></i> Innovación y Desarrollo Industrial en Veracruz</h2>
+            <div class="fila-contenido">
+                <div class="imagen-recuadro">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/8540674697182915990_0" alt="Trabajo y procesamiento industrial del plástico en plantas mexicanas">
+                </div>
+                <div>
+                    <p>
+                        ¡Veracruz está a la vanguardia industrial! En el estado se ha implementado el desarrollo de plantas de abasto vinculadas a la megaplanta de reciclaje de grado alimenticio <strong>PLANETA</strong> (inversión estratégica de Coca-Cola FEMSA y ALPLA), con el objetivo de procesar decenas de miles de toneladas de botellas PET post-consumo al año.
+                    </p>
+                    <p>
+                        Estas iniciativas no solo reducen drásticamente la contaminación en municipios clave como Minatitlán, Tantoyuca o el puerto de Veracruz, sino que también generan empleos verdes formales y justos para los recolectores de la región, integrando la tecnología con la sustentabilidad económica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 5: INICIATIVAS SOCIALES Y EDUCATIVAS -->
+        <section id="escuelas">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Iniciativas Sociales y Educativas</h2>
+            <p>El cambio ambiental comienza desde las aulas. En Veracruz, diversos bachilleratos y centros de educación ambiental del ayuntamiento (como los coordinados por SEDEMA en Xalapa y el Puerto) promueven prácticas cotidianas de gran impacto:</p>
+            
+            <ol>
+            <!-- <ol>: Crea una lista ordenada cronológicamente o por numeración automática. -->
+                <li>
+                    <strong>Centros de Acopio Autorizados:</strong> Escuelas que recolectan envases limpios, secos y aplastados para ser entregados directamente a empresas recicladoras, evitando que lleguen a los rellenos sanitarios.
+                </li>
+                <li>
+                    <strong>Programas de Canje Social ("Reciclatón"):</strong> Eventos masivos como los llevados a cabo en Tantoyuca en conjunto con ECOCE, donde los ciudadanos intercambian botellas plásticas recolectadas por productos alimenticios de la canasta básica.
+                </li>
+                <li>
+                    <strong>Educación Ambiental Práctica:</strong> Talleres de clasificación de residuos en las escuelas para enseñar la diferencia entre el PET, el aluminio, el papel de empaque y los materiales orgánicos.
+                </li>
+            </ol>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         4. PIE DE PÁGINA (FOOTER) Y ENLACES
+         ========================================= -->
     <footer>
+    <!-- <footer>: Define la base de la página, típicamente usada para enlaces informativos, créditos y contacto. -->
+        <p><strong>¿Quieres profundizar más en la ecología de nuestro estado?</strong></p>
         <p>
-            <strong>Para más información, visita enlaces oficiales:</strong><br><br>
-            <a href="https://www.gob.mx/semarnat" target="_blank">SEMARNAT (Gobierno de México)</a> | 
-            <a href="https://www.veracruz.gob.mx/medioambiente/" target="_blank">Secretaría de Medio Ambiente de Veracruz (SEDEMA)</a>
+            Visita: 
+            <a href="https://www.veracruz.gob.mx/medioambiente/" target="_blank">Secretaría de Medio Ambiente (SEDEMA Veracruz)</a> | 
+            <a href="https://www.gob.mx/semarnat" target="_blank">Secretaría de Medio Ambiente Federal (SEMARNAT)</a>
+            <!-- target="_blank": Atributo que abre el enlace en una ventana nueva, manteniendo activa tu página actual. -->
         </p>
-        <p><small>&copy; 2026 - Proyecto Escolar de Bachillerato. Todos los derechos reservados.</small></p>
+        <p style="margin-top: 30px;"><small>&copy; 2026 - Proyecto de Bachillerato sobre Sustentabilidad. Comprometidos con un Veracruz limpio.</small></p>
+        <!-- <small>: Hace que la letra de derechos de autor sea más pequeña y discreta. -->
     </footer>
-
-    <script>
-        // <script>: Etiqueta que contiene el código de programación JavaScript.
-        function mostrarMensaje() {
-            // alert(): Muestra una ventana emergente interactiva en el navegador.
-            alert("¡Dato Ecológico!\nEn Veracruz se generan toneladas de residuos plásticos al día. Al reciclar una sola botella de PET, ahorras la energía equivalente a mantener un foco encendido por 3 horas.");
-        }
-    </script>
 
 </body>
 </html>
+```eof
+
+---
+
+### Explicación de los Nuevos Elementos y Mejoras Interactivas:
+
+1. **La Pantalla de Inicio Estilo "Hero/Splash Screen" (`.pantalla-inicio`)**:
+   - Ocupa toda la pantalla al abrir el sitio (`height: 100vh`).
+   - Usa un fondo con una imagen de playa con plástico y un filtro verde oscuro que permite que las letras blancas se lean perfectamente (gracias a la técnica de contraste del **degradado lineal**).
+   - Tiene el botón interactivo **"Entrar al Portal"**, el cual utiliza una transición CSS suave para elevarse y cambiar de color al colocar el mouse por encima.
+
+2. **Interactividad mediante Anclas de Desplazamiento Suave (`scroll-behavior: smooth;`)**:
+   - Al hacer clic en el botón de la pantalla de inicio o en los enlaces de la barra de navegación superior, la página se deslizará de forma automática y fluida hacia la sección correspondiente sin dar brincos bruscos.
+
+3. **Imágenes Reales del Servidor de Google**:
+   - Hemos configurado y colocado imágenes reales de reciclaje y residuos integradas estéticamente mediante reglas de CSS que ajustan su tamaño y le dan un aspecto de galería profesional (bordes curvos y sombras discretas).
+
+4. **Diseño de Tarjetas Modulares (`.tarjeta`)**:
+   - El proceso de reciclaje se acomoda de forma automática en una cuadrícula de bloques que tienen efectos visuales de elevación al pasar el puntero, lo que fomenta la interacción del usuario.
+
+
