@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<!-- <!DOCTYPE html>: Establece el estándar moderno de HTML5. -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta charset="UTF-8">: Muestra acentos y caracteres especiales correctamente. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoVeracruz Pro: Gestión Integral y Futuro del PET</title>
+    <title>EcoVeracruz Pro: Plataforma de Inteligencia Ambiental y Gestión del PET</title>
 
-    <!-- FUENTES E ICONOS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Variables con una paleta de colores ecológica vibrante y llamativa */
+        /* PALETA DE COLORES ULTRA VIBRANTE Y PROFESIONAL */
         :root {
-            --gradiente-inicio: linear-gradient(135deg, #00b4db, #0083b0); /* Degradado azul océano vibrante */
-            --gradiente-eco: linear-gradient(135deg, #11998e, #38ef7d);    /* Degradado verde brillante */
-            --color-primario: #0b6623;
-            --color-acento: #ffb703;
-            --color-fondo: #f0f7f4;
+            --gradiente-premium: linear-gradient(135deg, #00f260, #0575e6); /* Verde neón a azul eléctrico */
+            --gradiente-sunset: linear-gradient(135deg, #ff9900, #ff5500);  /* Naranja brillante para alertas */
+            --gradiente-dark: linear-gradient(135deg, #111827, #1f2937);    /* Fondo oscuro premium */
+            --color-primario: #0575e6;
+            --color-secundario: #00f260;
+            --color-fondo: #f4f7f6;
             --color-tarjeta: #ffffff;
-            --color-texto: #222523;
-            --transicion-limpia: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --color-texto: #1f2937;
+            --transicion-fluida: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         html {
@@ -42,10 +40,10 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* SCREEN DE INICIO EXTENSO E INTERACTIVO */
+        /* PANTALLA DE INICIO (HERO SCREEN IMPACTANTE) */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1200') no-repeat center center/cover;
+            background: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.85)), url('https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1200') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -56,49 +54,54 @@
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 4rem;
             margin-bottom: 20px;
-            font-weight: 800;
+            font-weight: 900;
             letter-spacing: -1px;
+            background: linear-gradient(to right, #00f260, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             animation: fadeInDown 1s ease;
         }
 
         .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
+            font-size: 1.5rem;
+            max-width: 850px;
             margin-bottom: 40px;
-            font-weight: 400;
+            color: #e5e7eb;
         }
 
         .btn-principal {
-            background: var(--gradiente-eco);
+            background: var(--gradiente-premium);
             color: white;
-            padding: 18px 40px;
+            padding: 20px 45px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.1rem;
             text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(56, 239, 125, 0.3);
-            transition: var(--transicion-limpia);
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0, 242, 96, 0.4);
+            transition: var(--transicion-fluida);
         }
 
         .btn-principal:hover {
             transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 15px 30px rgba(56, 239, 125, 0.5);
+            box-shadow: 0 15px 40px rgba(5, 117, 230, 0.6);
         }
 
-        /* HEADER Y BARRA DE BÚSQUEDA COLORIDA */
+        /* HEADER Y CONTROL DE NAVEGACIÓN */
         header {
             position: sticky;
             top: 0;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
         }
 
         .navbar {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -109,192 +112,177 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #11998e;
+            font-size: 1.7rem;
+            font-weight: 900;
+            background: var(--gradiente-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-decoration: none;
         }
 
         .menu-navegacion {
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .menu-navegacion a {
             text-decoration: none;
-            color: #555;
-            font-weight: 600;
+            color: #4b5563;
+            font-weight: 700;
+            font-size: 0.9rem;
             padding: 10px 15px;
-            border-radius: 8px;
-            transition: var(--transicion-limpia);
+            border-radius: 30px;
+            transition: var(--transicion-fluida);
         }
 
-        .menu-navegacion a:hover {
-            background: #e8f5e9;
-            color: var(--color-primario);
+        .menu-navegacion a:hover, .menu-navegacion a.active {
+            background: var(--gradiente-premium);
+            color: white;
         }
 
-        /* Contenedor de Búsqueda Súper Colorido */
+        /* BARRA DE BÚSQUEDA EVOLUCIONADA */
         .contenedor-busqueda {
-            position: relative;
             display: flex;
             align-items: center;
-            background: var(--gradiente-inicio);
-            padding: 4px;
+            background: #f3f4f6;
+            padding: 5px 15px;
             border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0, 180, 219, 0.3);
-            transition: var(--transicion-limpia);
+            border: 2px solid transparent;
+            transition: var(--transicion-fluida);
         }
 
         .contenedor-busqueda:focus-within {
-            box-shadow: 0 6px 20px rgba(0, 131, 176, 0.5);
-            transform: scale(1.02);
+            border-color: #0575e6;
+            background: white;
+            box-shadow: 0 0 15px rgba(5, 117, 230, 0.2);
         }
 
         .contenedor-busqueda input {
             border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            outline: none;
-            font-size: 0.95rem;
-            width: 220px;
-            transition: var(--transicion-limpia);
-        }
-
-        .contenedor-busqueda button {
             background: transparent;
-            border: none;
-            color: white;
-            padding: 0 15px;
-            cursor: pointer;
-            font-size: 1.1rem;
+            outline: none;
+            padding: 8px;
+            font-size: 0.95rem;
+            width: 200px;
         }
 
-        /* SECCIONES EXTENSAS */
+        /* CONTENEDOR GENERAL DE CONTENIDO */
         main {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
         .seccion-card {
             background: var(--color-tarjeta);
-            border-radius: 20px;
-            padding: 45px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            transition: var(--transicion-limpia);
-            border: 1px solid rgba(0,0,0,0.02);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            transition: var(--transicion-fluida);
+            border: 1px solid rgba(0,0,0,0.01);
         }
 
         .seccion-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
         }
 
         h2 {
-            font-size: 2.2rem;
-            color: #0b6623;
+            font-size: 2.4rem;
+            color: #111827;
             margin-top: 0;
             display: flex;
             align-items: center;
             gap: 15px;
+            border-bottom: 3px solid #f3f4f6;
+            padding-bottom: 15px;
         }
 
-        /* DISEÑO MULTICOLUMNA INTELIGENTE */
         .bloque-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
             margin-top: 30px;
         }
 
-        @media(max-width: 850px) {
+        @media(max-width: 950px) {
             .bloque-grid { grid-template-columns: 1fr; }
             .navbar { flex-direction: column; }
         }
 
         .imagen-decorativa {
             width: 100%;
-            height: 380px;
-            border-radius: 15px;
+            height: 400px;
+            border-radius: 20px;
             object-fit: cover;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
 
-        /* DISEÑO DE TARJETAS DE PROCESOS INTERACTIVAS */
-        .grid-tarjetas {
+        /* TABLA MÁS COLORIDA Y LIMPIA */
+        .contenedor-tabla { overflow-x: auto; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; }
+        th { background: var(--gradiente-premium); color: white; padding: 20px; font-weight: 700; text-align: left; }
+        td { padding: 20px; border-bottom: 1px solid #f3f4f6; }
+        tr:hover { background-color: #f0fdf4; }
+
+        /* MÓDULO DEL JUEGO INTERACTIVO (TRIVIA ECO) */
+        .contenedor-juego {
+            background: var(--gradiente-dark);
+            color: white;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            margin-top: 35px;
+        }
+
+        .opciones-juego {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
         }
 
-        .tarjeta-interna {
-            background: #fafafa;
-            border-top: 4px solid #11998e;
-            padding: 30px;
-            border-radius: 12px;
-            transition: var(--transicion-limpia);
-        }
+        @media(max-width: 600px) { .opciones-juego { grid-template-columns: 1fr; } }
 
-        .tarjeta-interna:hover {
-            background: #ffffff;
-            border-top-color: #38ef7d;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transform: translateY(-5px);
-        }
-
-        /* TABLA DE CONTENIDO */
-        .contenedor-tabla {
-            overflow-x: auto;
-            margin-top: 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 18px 25px;
-            text-align: left;
-        }
-
-        th {
-            background: var(--gradiente-inicio);
+        .btn-juego {
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            font-weight: 700;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transicion-fluida);
         }
 
-        tr {
-            border-bottom: 1px solid #eee;
-            transition: var(--transicion-limpia);
+        .btn-juego:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--color-secundario);
+            transform: translateY(-2px);
         }
 
-        tr:hover {
-            background-color: #f1f9f9;
+        #marcador {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: var(--color-secundario);
         }
 
-        /* FOOTER DE CIERRE */
+        /* FOOTER */
         footer {
-            background: #111412;
+            background: #0b0f19;
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        footer a {
-            color: #38ef7d;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        footer a { color: #00f260; text-decoration: none; font-weight: bold; }
 
-        /* Animación para el Hero */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -303,161 +291,206 @@
 </head>
 <body>
 
-    <!-- PANTALLA DE INICIO (HERO SCREEN EXTENSO) -->
-    <section class="hero" id="pantalla-inicio">
-        <h1>Sustentabilidad y Futuro del PET en Veracruz</h1>
-        <p>Una investigación integral sobre los ecosistemas industriales, la persistencia ambiental y el auge del reciclaje a nivel estatal.</p>
-        <a href="#portal" class="btn-principal">Explorar Contenido <i class="fa-solid fa-chevron-down"></i></a>
+    <section class="hero" id="inicio">
+        <h1>EcoVeracruz Inteligente</h1>
+        <p>Descubre el impacto, la ciencia y las soluciones tecnológicas detrás de la gestión del PET. Pon a prueba tus conocimientos en tiempo real.</p>
+        <a href="#portal" class="btn-principal">Ingresar al Portal <i class="fa-solid fa-bolt"></i></a>
     </section>
 
-    <!-- MENU DE NAVEGACIÓN Y BUSCADOR -->
     <header id="portal">
         <div class="navbar">
-            <a href="#pantalla-inicio" class="logo"><i class="fa-solid fa-recycle"></i> EcoVeracruz</a>
-            
+            <a href="#inicio" class="logo"><i class="fa-solid fa-leaf"></i> EcoVeracruz</a>
             <nav class="menu-navegacion">
                 <a href="#impacto">Impacto</a>
+                <a href="#estadisticas">Estadísticas</a>
                 <a href="#economia">Economía Circular</a>
                 <a href="#proceso">El Proceso</a>
                 <a href="#innovacion">Innovación</a>
-                <a href="#iniciativas">Iniciativas</a>
+                <a href="#futuro">Alternativas</a>
+                <a href="#juego">Trivia Eco</a>
             </nav>
-
-            <!-- Barra de búsqueda dinámica súper llamativa -->
             <div class="contenedor-busqueda">
-                <input type="text" id="inputBuscador" placeholder="Buscar palabras clave..." onkeyup="ejecutarBusqueda()">
-                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <i class="fa-solid fa-magnifying-glass" style="color: #9ca3af;"></i>
+                <input type="text" id="inputBuscador" placeholder="Filtrar temas..." onkeyup="filtrarContenido()">
             </div>
         </div>
     </header>
 
-    <!-- SECCIONES EXTENSAS DE INFORMACIÓN -->
-    <main id="contenedor-secciones">
+    <main id="contenedor-principal">
 
-        <!-- SECCIÓN 1: IMPACTO AMBIENTAL -->
         <section class="seccion-card" id="impacto">
-            <h2><i class="fa-solid fa-circle-exclamation" style="color: #d9534f;"></i> Impacto Ambiental y Persistencia en Ecosistemas</h2>
+            <h2><i class="fa-solid fa-biohazard" style="color: #ff3b30;"></i> Impacto Ambiental y Destino de los Residuos</h2>
             <div class="bloque-grid">
                 <div>
-                    <p>El territorio veracruzano, con su extensa zona costera y múltiples ríos, enfrenta un reto masivo frente a la acumulación de desechos plásticos. El <strong>PET (Tereftalato de polietileno)</strong> es químicamente muy estable, lo que le otorga una <strong>persistencia en la naturaleza calculada entre 150 y 500 años</strong>.</p>
-                    <p>En el Parque Nacional Sistema Arrecifal Veracruzano y las playas de Coatzacalcos, Tuxpan y Alvarado, las botellas mal dispuestas sufren degradación mecánica por el oleaje y la radiación solar. Esto provoca su fragmentación en <strong>microplásticos</strong>, los cuales contaminan el agua dulce y marina, alterando la cadena alimenticia de las especies de pesca comercial del estado.</p>
+                    <p>El territorio de Veracruz alberga ecosistemas de altísima fragilidad ecológica. La acumulación desmedida de plásticos de un solo uso genera crisis severas en nuestras redes hídricas, provocando taponamientos de alcantarillas en temporadas de tormentas tropicales e inundaciones recurrentes.</p>
+                    <p>Las propiedades moleculares del PET evitan que microorganismos naturales lo rompan con rapidez, extendiendo su ciclo de vida en basureros hasta por <strong>cinco siglos</strong>. Con el paso de los años, las corrientes arrastran estos envases hacia los litorales de Alvarado y la barra de Tuxpan, degradándose en micropartículas tóxicas ingeridas por peces y crustáceos.</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=600" class="imagen-decorativa" alt="Playa contaminada con microplásticos">
+                <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=600" class="imagen-decorativa" alt="Impacto del plástico en las playas">
             </div>
         </section>
 
-        <!-- SECCIÓN 2: RECICLAJE Y ECONOMÍA CIRCULAR -->
-        <section class="seccion-card" id="economia">
-            <h2><i class="fa-solid fa-chart-line" style="color: #11998e;"></i> Reciclaje y Economía Circular</h2>
-            <p>La economía circular propone cambiar el obsoleto modelo de "extraer, fabricar, desechar" por un ciclo cerrado y productivo. En Veracruz, recolectar botellas de PET no es solo limpieza, sino la base de una cadena de valor industrial en crecimiento.</p>
-            
+        <section class="seccion-card" id="estadisticas">
+            <h2><i class="fa-solid fa-chart-pie" style="color: #00c6ff;"></i> Estadísticas de Consumo y Recuperación</h2>
+            <p>Comprender las dimensiones métricas de la problemática nos permite dimensionar el tamaño de la infraestructura necesaria para procesar los desechos plásticos:</p>
             <div class="contenedor-tabla">
                 <table>
                     <thead>
                         <tr>
-                            <th>Concepto Clave</th>
-                            <th>Descripción Aplicada a Veracruz</th>
-                            <th>Tasa de Recuperación Estimada</th>
+                            <th>Métrica Evaluada</th>
+                            <th>Nivel Nacional (México)</th>
+                            <th>Impacto Estimado en Veracruz</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Ciclo Cerrado ("Bottle to Bottle")</strong></td>
-                            <td>Proceso donde una botella usada se procesa para convertirse en resina apta y limpia para crear una botella idéntica.</td>
-                            <td>Aproximadamente 56% nacional.</td>
+                            <td><strong>Generación diaria por habitante</strong></td>
+                            <td>Aproximadamente 1.2 kg de residuos generales.</td>
+                            <td>Cerca de 9,000 toneladas de basura al día a nivel estatal.</td>
                         </tr>
                         <tr>
-                            <td><strong>Upcycling (Supra-reciclaje)</strong></td>
-                            <td>Uso de plástico recuperado para fabricar productos de mayor valor técnico como fibras textiles, calzado y autopartes en talleres regionales.</td>
-                            <td>Moderado en expansión.</td>
+                            <td><strong>Porcentaje de PET recolectado</strong></td>
+                            <td>56% del mercado total consumido.</td>
+                            <td>Concentrado masivamente en las zonas metropolitanas.</td>
                         </tr>
                         <tr>
-                            <td><strong>Valorización Energética</strong></td>
-                            <td>Uso de plásticos no aptos para el reciclaje mecánico como combustible alterno seguro en las plantas cementeras de la región centro del estado.</td>
-                            <td>Bajo/Controlado.</td>
+                            <td><strong>Destino final sin reciclaje</strong></td>
+                            <td>44% termina en rellenos sanitarios o tiraderos ilegales.</td>
+                            <td>Representa un grave riesgo para mantos acuíferos del estado.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: EL PROCESO INDUSTRIAL -->
+        <section class="seccion-card" id="economia">
+            <h2><i class="fa-solid fa-arrows-spin" style="color: #00f260;"></i> Fundamentos de la Economía Circular</h2>
+            <p>Frente al agotamiento de materias primas vírgenes derivadas del petróleo, el esquema de la economía circular redefine los desechos plásticos no como basura, sino como recursos de alto valor económico que deben reintegrarse al mercado secundario constantemente.</p>
+            <p>A través de convenios de separación comunitaria y cooperativas vecinales de recolección en los municipios de Xalapa y Coatepec, el PET es capturado antes de contaminar el suelo, permitiendo ingresos económicos directos a las familias recolectoras y reduciendo los costos de recolección gubernamental.</p>
+        </section>
+
         <section class="seccion-card" id="proceso">
-            <h2><i class="fa-solid fa-gears" style="color: #38ef7d;"></i> El Proceso de Reciclaje Mecánico paso a paso</h2>
-            <p>El plástico descartado pasa por un sofisticado proceso tecnológico para recuperar sus propiedades físicas originales:</p>
-            
-            <div class="grid-tarjetas">
-                <div class="tarjeta-interna">
-                    <h3><i class="fa-solid fa-truck-ramp-box"></i> 1. Clasificación</h3>
-                    <p>Las pacas de plástico recolectadas se separan minuciosamente por color y tipo de material para evitar la presencia de impurezas como PVC o etiquetas.</p>
-                </div>
-                <div class="tarjeta-interna">
-                    <h3><i class="fa-solid fa-scissors"></i> 2. Molienda</h3>
-                    <p>Cuchillas de alta potencia trituran las botellas limpias hasta convertirlas en pequeñas hojuelas plásticas de tamaño uniforme llamadas <em>flakes</em>.</p>
-                </div>
-                <div class="tarjeta-interna">
-                    <h3><i class="fa-solid fa-faucet-drip"></i> 3. Lavado y Extrusión</h3>
-                    <p>Se lavan con soluciones químicas alcalinas para quitar pegamentos, se secan y se funden a 260°C para formar nuevos perdigones de plástico (pellets).</p>
-                </div>
-            </div>
+            <h2><i class="fa-solid fa-industrial" style="color: #ff9900;"></i> Ingeniería del Reciclaje Mecánico</h2>
+            <p>El tratamiento industrial para transformar una botella sucia en plástico apto para grado alimenticio involucra etapas complejas de transformación química y física:</p>
+            <ul>
+                <li style="margin-bottom: 15px;"><strong>Descontaminación Primaria:</strong> Remoción mecánica de tapas de polipropileno y etiquetas mediante sopladores avanzados de aire por densidad.</li>
+                <li style="margin-bottom: 15px;"><strong>Molienda e Hidrolavado:</strong> Reducción a hojuelas (flakes) en molinos rotatorios combinada con tinas de lavado a 90°C enriquecidas con soluciones tensoactivas especiales.</li>
+                <li style="margin-bottom: 15px;"><strong>Policondensación en Estado Sólido (SSP):</strong> Calentamiento al vacío para eliminar impurezas microscópicas latentes a nivel molecular.</li>
+            </ul>
         </section>
 
-        <!-- SECCIÓN 4: INNOVACIÓN TECNOLÓGICA -->
         <section class="seccion-card" id="innovacion">
-            <h2><i class="fa-solid fa-lightbulb" style="color: #ffb703;"></i> Innovación Veracruzana e Infraestructura</h2>
+            <h2><i class="fa-solid fa-microscope" style="color: #0575e6;"></i> Innovación y Desarrollo Industrial en Veracruz</h2>
             <div class="bloque-grid">
-                <img src="https://images.unsplash.com/photo-1595275372297-bf9ed9b4d736?w=600" class="imagen-decorativa" alt="Fábrica de procesamiento industrial">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600" class="imagen-decorativa" alt="Tecnología de punta y automatización en plantas de reciclaje">
                 <div>
-                    <p>Veracruz se ha consolidado como un nodo logístico vital para el reciclaje gracias a alianzas estratégicas multinacionales. La creación de macrocentros de acopio en municipios metropolitanos permite consolidar miles de toneladas de PET al mes.</p>
-                    <p>La introducción de maquinaria automatizada con lectores ópticos infrarrojos en los centros de selección permite agrupar el plástico a velocidades industriales. Esto disminuye la huella de carbono y asegura que el material veracruzano cumpla los estándares de inocuidad alimentaria requeridos globalmente.</p>
+                    <p>¡Veracruz está a la vanguardia industrial! En el estado se ha implementado el desarrollo de plantas de abasto vinculadas a la megaplaneta de reciclaje de grado alimenticio PLANETA (inversión estratégica de Coca-Cola FEMSA y ALPLA), con el objetivo de procesar decenas de miles de toneladas de botellas PET post-consumo al año.</p>
+                    <p>Estas iniciativas no solo reducen drásticamente la contaminación en municipios clave como Minatitlán, Tantoyuca o el puerto de Veracruz, sino que también generan empleos verdes formales y justos para los recolectores de la región, integrando la tecnología con la sustentabilidad económica.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 5: INICIATIVAS SOCIALES -->
-        <section class="seccion-card" id="iniciativas">
-            <h2><i class="fa-solid fa-users" style="color: #00b4db;"></i> Iniciativas Sociales y Educativas</h2>
-            <p>La educación en el nivel bachillerato y universitario es clave para detonar la separación en origen. En Veracruz destacan las siguientes actividades:</p>
-            <ol style="line-height: 1.8;">
-                <li><strong>Campañas Escolares Eco-Reto:</strong> Concursos estudiantiles orientados a la recolección de envases en los centros de estudio para financiar insumos escolares.</li>
-                <li><strong>Estrategias de Canje Comunitario:</strong> Programas en zonas vulnerables donde el PET limpio se intercambia por víveres, promoviendo el bienestar social.</li>
-                <li><strong>Redes Municipales de Recolección:</strong> Talleres ciudadanos para capacitar a los recuperadores urbanos en técnicas óptimas de manejo de residuos sólidos urbanos.</li>
-            </ol>
+        <section class="seccion-card" id="futuro">
+            <h2><i class="fa-solid fa-flask" style="color: #a855f7;"></i> Alternativas Tecnológicas y Bioplásticos</h2>
+            <p>La ciencia del mañana no solo busca recolectar más botellas, sino rediseñar los componentes estructurales de la industria del embalaje. Actualmente se investigan sustitutos biológicos avanzados en laboratorios universitarios del estado:</p>
+            <p>El <strong>PLA (Ácido poliláctico)</strong> derivado de los azúcares del almidón de maíz o los desechos de la caña de azúcar en las regiones de Córdoba y Orizaba representa la alternativa biodegradable con mayor proyección a corto plazo, ya que puede integrarse a la tierra en condiciones de compostaje industrial en menos de 90 días.</p>
+        </section>
+
+        <section class="seccion-card" id="juego">
+            <h2><i class="fa-solid fa-gamepad" style="color: #00f260;"></i> Simulador de Decisiones Ambientales (Trivia)</h2>
+            <p>Demuestra lo que has aprendido en esta plataforma interactiva. Responde correctamente la pregunta planteada para acumular puntos:</p>
+            
+            <div class="contenedor-juego">
+                <h3 id="pregunta-juego">Cargando desafío ambiental...</h3>
+                <div class="opciones-juego" id="contenedor-opciones">
+                    </div>
+                <p id="marcador">Puntuación: <span id="puntos">0</span> aciertos</p>
+            </div>
         </section>
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer>
-        <p><strong>EcoVeracruz Avanzado - Portal Escolar e Informativo</strong></p>
-        <p>Investigación desarrollada con fines pedagógicos. Consulta dependencias oficiales:</p>
-        <p><a href="https://www.veracruz.gob.mx/medioambiente/" target="_blank">SEDEMA Veracruz</a> | <a href="https://www.gob.mx/semarnat" target="_blank">SEMARNAT México</a></p>
-        <p style="margin-top: 25px; opacity: 0.6;"><small>&copy; 2026 Sistema Universitario de Bachillerato. Todos los derechos reservados.</small></p>
+        <p><strong>EcoVeracruz Inteligente: Plataforma Educativa 2026</strong></p>
+        <p>Desarrollado para la difusión de la ingeniería ambiental aplicada al reciclaje. Enlaces oficiales de consulta:</p>
+        <p><a href="https://www.veracruz.gob.mx/medioambiente/" target="_blank">SEDEMA Veracruz</a> | <a href="https://www.gob.mx/semarnat" target="_blank">SEMARNAT</a></p>
     </footer>
 
-    <!-- INTERACTIVIDAD DE LA BARRA DE BÚSQUEDA -->
     <script>
-        /* Función interactiva que lee la barra de búsqueda y oculta/muestra secciones dinámicamente con transiciones limpias */
-        function ejecutarBusqueda() {
-            // Obtenemos el texto ingresado por el usuario y lo pasamos a minúsculas
-            let textoBuscado = document.getElementById("inputBuscador").value.toLowerCase();
-            // Traemos todas las secciones informativas de la página
+        // 1. SISTEMA DEL BUSCADOR INTERACTIVO
+        function filtrarContenido() {
+            let termino = document.getElementById("inputBuscador").value.toLowerCase();
             let secciones = document.getElementsByClassName("seccion-card");
 
-            // Recorremos sección por sección
             for (let i = 0; i < secciones.length; i++) {
-                let contenidoSeccion = secciones[i].innerText.toLowerCase();
-                
-                // Si la sección incluye la palabra buscada, se muestra con opacidad; si no, se oculta suavemente
-                if (contenidoSeccion.includes(textoBuscado)) {
+                let texto = secciones[i].innerText.toLowerCase();
+                if (texto.includes(termino)) {
                     secciones[i].style.display = "block";
-                    secciones[i].style.opacity = "1";
                 } else {
                     secciones[i].style.display = "none";
-                    secciones[i].style.opacity = "0";
                 }
             }
         }
+
+        // 2. SISTEMA DEL JUEGO INTERACTIVO (TRIVIA)
+        const preguntas = [
+            {
+                q: "¿Cuánto tiempo promedio tarda una botella de PET en degradarse en un basurero?",
+                options: ["De 5 a 10 años", "Hasta 500 años", "Nunca se degrada", "50 años"],
+                correct: 1
+            },
+            {
+                q: "¿Qué megaplanta procesadora de grado alimenticio recibe botellas recolectadas en Veracruz?",
+                options: ["Planta PLANETA", "PetStar Central", "MacroEco México", "Industrias Veracruz"],
+                correct: 0
+            },
+            {
+                q: "¿Qué material biológico se investiga en Veracruz como alternativa al plástico tradicional?",
+                options: ["Fibras de Vidrio", "Ácido poliláctico (PLA) de Caña", "Polímeros Sintéticos", "Resinas de Madera"],
+                correct: 1
+            }
+        ];
+
+        let indicePregunta = 0;
+        let score = 0;
+
+        function cargarPregunta() {
+            if (indicePregunta >= preguntas.length) {
+                document.getElementById("pregunta-juego").innerText = "¡Felicidades! Has terminado el entrenamiento ambiental.";
+                document.getElementById("contenedor-opciones").innerHTML = `<button class='btn-juego' onclick='reiniciarJuego()' style='grid-column: 1/-1;'>Jugar de nuevo</button>`;
+                return;
+            }
+
+            let pActual = preguntas[indicePregunta];
+            document.getElementById("pregunta-juego").innerText = pActual.q;
+            
+            let opcionesHTML = "";
+            pActual.options.forEach((opt, idx) => {
+                opcionesHTML += `<button class="btn-juego" onclick="verificarRespuesta(${idx})">${opt}</button>`;
+            });
+            document.getElementById("contenedor-opciones").innerHTML = opcionesHTML;
+        }
+
+        function verificarRespuesta(seleccionado) {
+            if (seleccionado === preguntas[indicePregunta].correct) {
+                score++;
+                alert("¡Excelente! Respuesta correcta. 🌿");
+            } else {
+                alert("Incorrecto. ¡Sigue estudiando el contenido de la página! 📋");
+            }
+            document.getElementById("puntos").innerText = score;
+            indicePregunta++;
+            cargarPregunta();
+        }
+
+        function reiniciarJuego() {
+            score = 0;
+            indicePregunta = 0;
+            document.getElementById("puntos").innerText = score;
+            cargarPregunta();
+        }
+
+        // Iniciar el juego automáticamente al cargar la página
+        window.onload = cargarPregunta;
     </script>
 </body>
 </html>
