@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Uso y Reciclaje del PET en Veracruz</title>
+
+    <style>
+        /* Modifica la fuente de toda la página y elimina márgenes molestos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8f7; /* Gris menta muy claro */
+            color: #2d3748; /* Gris oscuro para el texto principal */
+            line-height: 1.6;
+        }
+
+        /* Diseño de la Barra de Navegación */
+        nav {
+            background-color: #00796b; /* Verde ecológico oscuro */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav p {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Estilo de los enlaces en el menú */
+        nav a {
+            color: #e0f2f1; /* Azul aguamarina muy claro */
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+        }
+
+        /* Efecto cuando pasas el cursor sobre un enlace */
+        nav a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Contenedores de las secciones */
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #ffffff; /* Fondos de tarjetas en blanco */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+        }
+
+        /* Títulos principales */
+        h1 {
+            color: #004d40;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #00796b;
+            border-bottom: 2px solid #b2dfdb; /* Línea decorativa abajo del título */
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #004d40;
+        }
+
+        /* Estilo de imágenes */
+        .img-contenedor {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Formatos de texto */
+        strong { color: #00796b; }
+        em { color: #4a5568; }
+
+        /* Estilos de las Listas */
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Diseño moderno de la Tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Elimina doble borde */
+            margin: 20px 0;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #00796b;
+            color: #ffffff;
+        }
+
+        /* Hace que las filas impares tengan un color diferente (Efecto Cebra) */
+        tr:nth-child(even) {
+            background-color: #e0f2f1;
+        }
+
+        /* Botón interactivo con JavaScript */
+        .btn-interactivo {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #00897b;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+
+        .btn-interactivo:hover {
+            background-color: #004d40;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #004d40;
+            color: #e0f2f1;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #80cbc4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <p>
+            <a href="#introduccion">Inicio</a>
+            <a href="#impacto">Impacto Ambiental</a>
+            <a href="#economia">Economía Circular</a>
+            <a href="#iniciativas">Iniciativas en Veracruz</a>
+        </p>
+    </nav>
+
+    <section id="introduccion">
+        <h1>El Uso y Reciclaje del PET en el Estado de Veracruz</h1>
+
+        <div class="img-contenedor">
+            <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800" alt="Botellas de PET para reciclar">
+        </div>
+
+        <p>
+            El plástico <strong>PET (Polietileno Tereftalato)</strong> es uno de los materiales más utilizados en la industria de las bebidas en <em>Veracruz</em> debido a su ligereza y <u>versatilidad industrial</u>. Sin embargo, su consumo masivo plantea serios retos para la gestión de residuos en el estado.
+        </p>
+
+        <button class="btn-interactivo" onclick="mostrarMensaje()">¿Sabías qué?</button>
+    </section>
+
+    <section id="impacto">
+        <h2>1. Impacto Ambiental y Problemática</h2>
+        <p>El uso desmedido del PET genera consecuencias críticas en nuestro entorno local:</p>
+
+        <ul>
+            <li><strong>Persistencia en el ambiente:</strong> Una botella de PET puede tardar hasta 500 años en degradarse por completo.</li>
+            <li><strong>Contaminación oceánica:</strong> Gran parte de estos desechos terminan en el Golfo de México, afectando gravemente la fauna marina de Veracruz.</li>
+            <li><strong>Alternativa a otros materiales:</strong> Aunque es más ligero que el vidrio, su falta de recolección anula cualquier beneficio ambiental inicial.</li>
+        </ul>
+    </section>
+
+    <section id="economia">
+        <h2>2. Reciclaje y Economía Circular</h2>
+        <p>La transición hacia una economía circular en Veracruz busca que el PET no se convierta en basura, sino en materia prima para nuevos productos a través de la <strong>innovación veracruzana</strong>.</p>
+        
+        <h3>Datos sobre la gestión del PET</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Situación Actual en Veracruz</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Proceso de Reciclaje</strong></td>
+                    <td>Recolección, trituración, lavado y fundición para crear nueva resina plástica.</td>
+                </tr>
+                <tr>
+                    <td><strong>Destino Comercial</strong></td>
+                    <td>Uso en la industria textil local y fabricación de nuevas botellas de grado alimenticio.</td>
+                </tr>
+                <tr>
+                    <td><strong>Centros de Acopio</strong></td>
+                    <td>Concentrados principalmente en las zonas metropolitanas de Xalapa y Veracruz-Boca del Río.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="iniciativas">
+        <h2>3. Iniciativas Sociales y Educativas en el Estado</h2>
+        <p>Actualmente, bachilleratos y universidades en Veracruz están implementando programas para concientizar a los jóvenes. Las principales acciones son:</p>
+
+        <ol>
+            <li>Campañas de "Limpiatón" en las playas del puerto de Veracruz.</li>
+            <li>Instalación de contenedores exclusivos para PET en los centros educativos de nivel medio superior.</li>
+            <li>Talleres de creatividad para transformar el plástico en artículos de utilidad escolar.</li>
+        </ol>
+    </section>
+
+    <footer>
+        <p>
+            <strong>Para más información, visita enlaces oficiales:</strong><br><br>
+            <a href="https://www.gob.mx/semarnat" target="_blank">SEMARNAT (Gobierno de México)</a> | 
+            <a href="https://www.veracruz.gob.mx/medioambiente/" target="_blank">Secretaría de Medio Ambiente de Veracruz (SEDEMA)</a>
+        </p>
+        <p><small>&copy; 2026 - Proyecto Escolar de Bachillerato. Todos los derechos reservados.</small></p>
+    </footer>
+
+    <script>
+        // <script>: Etiqueta que contiene el código de programación JavaScript.
+        function mostrarMensaje() {
+            // alert(): Muestra una ventana emergente interactiva en el navegador.
+            alert("¡Dato Ecológico!\nEn Veracruz se generan toneladas de residuos plásticos al día. Al reciclar una sola botella de PET, ahorras la energía equivalente a mantener un foco encendido por 3 horas.");
+        }
+    </script>
+
+</body>
+</html>
